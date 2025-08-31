@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctug8a76sgl4p"]
+
+[ext_resource type="Texture2D" uid="uid://2s737ak62shu" path="res://assets/sprites/blocktile.png" id="1_8r6n6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cgrg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kun4"]
+size = Vector2(16, 16)
+
+[node name="Block" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_cgrg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4kun4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8r6n6")

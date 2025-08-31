@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwt5pifc307e4"]
+
+[ext_resource type="Script" uid="uid://rc6mrss5wyis" path="res://scripts/game_manager.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cvqixsrcagso4" path="res://scenes/player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://ctug8a76sgl4p" path="res://scenes/block.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cmucn34ict12f" path="res://scenes/bullet.tscn" id="3_lbhrr"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_lnu2h")
+
+[node name="Player" parent="." instance=ExtResource("1_yqjtg")]
+unique_name_in_owner = true
+position = Vector2(-6, 0)
+
+[node name="PlayerCamera" type="Camera2D" parent="Player"]
+unique_name_in_owner = true
+zoom = Vector2(8, 8)
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("2_lnu2h")]
+position = Vector2(24, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("2_lnu2h")]
+position = Vector2(-6, -26)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("2_lnu2h")]
+position = Vector2(48, -30)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("2_lnu2h")]
+position = Vector2(-49, -9)
+
+[node name="Bullet" parent="." instance=ExtResource("3_lbhrr")]
+position = Vector2(-31, -19)
